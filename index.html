@@ -26,7 +26,7 @@
                 'config': 'https://cdn1.lg.com.br/requirejs-config/0.0.1/js/config',
                 'aaControls': 'https://cdn1.lg.com.br/autoatendimento/1.0.0/js/dist',
                 'jquery.validator': 'https://cdn1.lg.com.br/jquery-validation/1.17.0/js/jquery.validate.min',
-                'bootstrap_V3.3.7':'https://cdn1.lg.com.br/bootstrap/3.3.7/js/bootstrap.min'
+                'bootstrap_V3.3.7': 'https://cdn1.lg.com.br/bootstrap/3.3.7/js/bootstrap.min'
             },
             map: {
                 '*': {
@@ -36,19 +36,19 @@
                     'image': 'cdn/autoatendimento/1.0.0/js/requirejs/lg.aa.imageLoader'
                 }
             },
-            shim:{
-                'bootstrap_V3.3.7':{
-                    deps:['jquery']
+            shim: {
+                'bootstrap_V3.3.7': {
+                    deps: ['jquery']
                 }
             },
             config: {
                 'text': {
-                    useXhr: function(url, protocol, hostname, port) {
+                    useXhr: function (url, protocol, hostname, port) {
                         return true;
                     }
                 }
             },
-            deps: ['jquery','bootstrap_V3.3.7']
+            deps: ['jquery', 'bootstrap_V3.3.7']
         };
     </script>
     <script src="https://cdn1.lg.com.br/require/2.3.5/js/require.js"></script>
@@ -62,12 +62,12 @@
 
         <form id="formFerias" class="form-horizontal">
             <div class="container-fluid">
-                
+
                 <fieldset class="lg-aa-fieldset lg-aa-fieldset--primario">
                     <div class="container">
                         <legend>Informações</legend>
                     </div>
-                
+
                     <div class="row">
                         <div class="lg-aa-container lg-aa-container--fieldset">
                             <div class="container">
@@ -104,7 +104,7 @@
                         <dl class="lg-aa-container__erro"></dl>
                         <legend>Parcelamento de Férias</legend>
                     </div>
-                
+
                     <div class="row">
                         <div class="lg-aa-container lg-aa-container--fieldset">
                             <div class="container">
@@ -231,6 +231,39 @@
                     </div>
                 </fieldset>
 
+
+                <fieldset class="lg-aa-fieldset lg-aa-fieldset--primario">
+                    <div class="container">
+                        <dl class="lg-aa-container__erro"></dl>
+                        <legend>Lançamento de Férias</legend>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="lg-aa-container lg-aa-container-fluid lg-aa-container--fieldset">
+                            <div class="container">
+                                <div class="col-md-5">
+                                    <div class="row">
+
+                                        <div id="switchLancamentoFerias" class="btn-group btn-group-sm lg-aa-switch ">
+                                            <label class="lg-aa-switch__item btn lg-aa-botao ">
+                                                <input type="radio" name="LancamentoFerias" value="true"> Histórico
+                                            </label>
+                                            <label class="lg-aa-switch__item btn lg-aa-botao ">
+                                                <input type="radio" name="LancamentoFerias" value="false" checked> No mês
+                                            </label>
+                                            <label class="lg-aa-switch__item btn lg-aa-botao ">
+                                                <input type="radio" name="LancamentoFerias" value="false" checked> Programadas
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
                 <div class="container">
                     <div class="col-xs-6 col-sm-3 col-sm-push-6 col-md-2 col-md-push-8">
                         <button type="button" class="btn btn-block lg-aa-botao lg-aa-botao--secundario">Cancelar</button>
@@ -244,12 +277,12 @@
     </div>
 
     <script>
-        require(['aaControls/lg.aa.config'], function(config) {
+        require(['aaControls/lg.aa.config'], function (config) {
             config.adicionar('workflow', './assets/scripts');
 
-            require(['jquery', 'workflow/lg.ferias.controller'], function($, FeriasController) {
+            require(['jquery', 'workflow/lg.ferias.controller'], function ($, FeriasController) {
                 new FeriasController($('#pnlFerias'));
-            }); 
+            });
         });
     </script>
 </body>

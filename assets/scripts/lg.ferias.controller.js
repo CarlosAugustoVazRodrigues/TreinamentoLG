@@ -72,6 +72,7 @@ define('workflow/lg.ferias.controller', [
             });
 
             this.$el.find('#switchFeriasParceladas').lgSwitch({ habilitado: false });
+            this.$el.find('#switchLancamentoFerias').lgSwitch({ toggle: true })
             this.$el.find('#switchDecimoTerceiroSalario').lgSwitch();
             this.$el.find('#switchAbonoPecuniario').lgSwitch({ toggle: true });
 
